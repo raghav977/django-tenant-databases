@@ -21,7 +21,7 @@ Similarly for other schools as well.
 4. paste it to activate virtual environment, the verification of virtual environment is shown as the (env) in the beginning like below
 5. <img width="780" height="98" alt="image" src="https://github.com/user-attachments/assets/f567d2db-3cf4-44cc-a35c-d9978030c015" />
 
-##Installing django and creating django-starter-project
+## Installing django and creating django-starter-project
 1. pip install django --> command to install the django
 2. pip install mysqlclient
 3. after the completion of django installation, let's make the django-project
@@ -34,7 +34,7 @@ Similarly for other schools as well.
 10. make sure to include it in settings.py installed_apps
 11. <img width="1311" height="685" alt="image" src="https://github.com/user-attachments/assets/9e2a5bde-5143-4ea1-8a08-135daf2a9274" />
 
-##Let's change the database from sqlite to mysql
+## Let's change the database from sqlite to mysql
 By default, Django uses SQLite as its database. For this tutorial, we will use MySQL instead.
 
 To use MySQL, first make sure it is installed on your system.
@@ -77,7 +77,7 @@ class Student(models.Model):
     name = models.CharField(max_length=200)
 
 MAKE SURE TO PERFORM MAKEMIGRATIONS, MIGRATE
-##creating the view:
+## creating the view:
 when the user enters: "school1" and sends post request
 we should take that school1 and make a db, and then migrate the model in that db.
 Lets do it
@@ -102,7 +102,7 @@ DATABASES = {
 }
 Look at the NAME key the value inside the NAME key is our database name, Now if from any where we simply just insert our school_name inside that NAME value then we can easily make the tables inside that database
 But the thing is only DATABASES['default']['NAME']='school_name' -->  wont work because to register the db inside the NAME the db should be already exist, it means we have to already use the query 
-##create database {school_name};
+## create database {school_name};
 so to use the query we need the connection object from django. that is found in from django.db package let's import connections and transaction (i will discuss on below why transaction?)
 One thing: The query can only be executed through the help of already created database, and here tutorialtenet, is already created database so, with the help of that DATABASES['deafult']['NAME'] we will execute our create database query 
 BUT THE THING IS WE CAN ONLY QUERY WITH THE help of connections object.
